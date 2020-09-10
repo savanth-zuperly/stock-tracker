@@ -10,5 +10,10 @@
 }
 
 .results-block {
-	display: inline;
+	display: inline-block;
+	margin-bottom:1rem;
+}
+
+.signup-button {
+	margin-right: 5px;
 }
