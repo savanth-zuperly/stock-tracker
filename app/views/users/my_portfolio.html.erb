@@ -3,7 +3,7 @@
 <div class="search-area">
 	<h3>Search for a Stock </h3>
 
-    <%= form_tag '#', method: :get do %>
+    <%= form_tag search_stock_path, method: :get do %>
       <div class="form-group row"> 
         <div class="col-sm-9">
           <%= text_field_tag :stock, params[:stock], placeholder: "Enter the Symbol of Stock to Search", autofocus: true , class: "form-control form-control-lg"  %>
