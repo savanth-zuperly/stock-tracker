@@ -15,7 +15,7 @@
               <th scope="row"><%= stock.ticker %></th>
               <td><%= stock.name %></td>
               <td><%= stock.last_price %></td>
-              <td>@mdo</td>
+              <td><%= link_to 'remove', user_stock_path(stock), method: :delete, data: {confirm: "Are you sure?"}, class: "badge badge-pill badge-danger"%></td>
             </tr>
           <% end %>
         </tbody>
