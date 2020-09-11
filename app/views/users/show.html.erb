@@ -1,0 +1,17 @@
+<h4>User Details</h4>
+
+<div class="card card-header results-block col-md-8">
+    <strong>Name : </strong><%= @user.full_name %>
+    <strong>Email : </strong><%= @user.email %>
+    <% if !current_user.already_friend?(@user) %>
+        <%= link_to 'Follow', friendships_path(friend: @user),method: :post, class: "badge badge-primary" %>
+    <% end %>
+</div>
+
+<div class="stock-list">
+  <% if !@stocks.empty? %>
+    <%= render 'stocks/list' %>
+  <% else %>
+    <p class="lead"> This user isn't tracking any stocks </p>
+  <% end %>
+</div>

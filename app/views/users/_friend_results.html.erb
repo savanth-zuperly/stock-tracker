@@ -6,7 +6,7 @@
     <div class="card card-header results-block col-md-8">
       <strong>Name : </strong><%= friend.full_name %>
       <strong>Email : </strong><%= friend.email %>
-      <%= link_to 'Profile', '#', class: "badge badge-info" %>
+      <%= link_to 'Profile', user_path(friend), class: "badge badge-info" %>
       <% if !current_user.already_friend?(friend) %>
         <%= link_to 'Follow', friendships_path(friend: friend),method: :post, class: "badge badge-primary" %>
       <% end %>

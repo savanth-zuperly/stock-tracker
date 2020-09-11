@@ -15,7 +15,10 @@
               <td><%= friend.first_name %></td>
               <td><%= friend.last_name %></td>
               <td><%= friend.email %></td>
-              <td><%= link_to 'Unfollow', friendship_path(friend), method: :delete, data: {confirm: "Are you sure?"}, class: "badge badge-danger" %></td>
+              <td>
+                <%= link_to 'Profile', user_path(friend), class: "badge badge-info mr-2" %>
+                <%= link_to 'Unfollow', friendship_path(friend), method: :delete, data: {confirm: "Are you sure?"}, class: "badge badge-danger" %>
+              </td>
             </tr>
           <% end %>
         </tbody>
