@@ -15,20 +15,7 @@
             <li class="nav-item <%= 'active' if request.path==my_friends_path %>">
               <%= link_to 'My Friends', my_friends_path, class: "nav-link" %>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
+            
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown active">
@@ -36,6 +23,9 @@
                 <%= fa_icon 'user-circle'%> <%= current_user.full_name %>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to(user_path(current_user), class: "dropdown-item") do %>
+                  <%= fa_icon 'eye' %> View Profile
+                <% end %>
                 <%= link_to(edit_user_registration_path, class: "dropdown-item") do %>
                   <%= fa_icon 'edit' %> Edit Profile
                 <% end %>
